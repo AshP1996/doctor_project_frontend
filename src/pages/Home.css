@@ -1,0 +1,259 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden; /* Hide horizontal scrollbar */
+  overflow-y: auto; /* Enable vertical scrollbar */
+  font-family: "Arial", sans-serif;
+  background-color: #f9f9fb;
+  color: #333;
+}
+
+.home {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(135deg, #f0f8ff, #e6e6fa);
+  min-height: 100vh;
+}
+
+.hero-block {
+  width: 100%;
+  min-height: 400px;
+  background-color: rgba(0, 0, 0, 0.5);
+  text-align: center;
+  padding: 50px 20px;
+  box-sizing: border-box; /* Ensure padding is included in width */
+  animation: fadeIn 1s ease-in-out;
+  color: #fff;
+}
+
+.hero-block h1 {
+  margin: 0;
+  font-size: 3em;
+}
+
+.hero-block p {
+  margin: 10px 0 0;
+  font-size: 1.5em;
+}
+
+.typing-animation {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 0.15em solid orange;
+  animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: orange;
+  }
+}
+
+.find-doctor-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 18px;
+  color: #fff;
+  background-color: #28a745;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.find-doctor-button:hover {
+  background-color: #218838;
+}
+
+.specification-block,
+.common-health-concern {
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.cards-wrapper {
+  overflow: hidden;
+  width: calc(100% - 80px); /* Adjusted to account for buttons */
+  display: flex;
+  justify-content: center;
+}
+
+.cards-container {
+  display: flex;
+  gap: 20px;
+  padding: 20px 0;
+  overflow-x: auto;
+  overflow-y: hidden; /* Hide vertical scrollbar */
+  align-items: center; /* Center cards vertically */
+  scrollbar-width: none; /* Hide scrollbar in Firefox */
+  -ms-overflow-style: none; /* Hide scrollbar in IE */
+}
+
+.cards-container::-webkit-scrollbar {
+  display: none; /* Hide scrollbar in WebKit browsers */
+}
+
+.specification-card,
+.concern-card {
+  min-width: 200px;
+  height: 200px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  flex-shrink: 0;
+}
+
+.specification-card:hover,
+.concern-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  background-color: #f0f0f0;
+}
+
+.scroll-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 1;
+  border-radius: 50%;
+  transition: background-color 0.3s;
+}
+
+.scroll-button:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.scroll-button.left {
+  left: 10px;
+}
+
+.scroll-button.right {
+  right: 10px;
+}
+
+.content-info,
+.services {
+  width: 100%;
+  padding: 40px 20px;
+  box-sizing: border-box; /* Ensure padding is included in width */
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 20px;
+}
+
+.content-info h2,
+.services h2 {
+  font-size: 1.8em;
+  color: #007bff;
+}
+
+.content-info p,
+.services p {
+  font-size: 1.1em;
+  color: #555;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .hero-block h1 {
+    font-size: 2.5em;
+  }
+
+  .hero-block p {
+    font-size: 1.3em;
+  }
+
+  .find-doctor-button {
+    font-size: 16px;
+    padding: 8px 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .cards-container {
+    gap: 10px;
+  }
+
+  .specification-card,
+  .concern-card {
+    min-width: 150px;
+    height: 150px;
+  }
+
+  .hero-block h1 {
+    font-size: 2em;
+  }
+
+  .hero-block p {
+    font-size: 1em;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-block {
+    padding: 30px 10px;
+  }
+
+  .hero-block h1 {
+    font-size: 1.5em;
+  }
+
+  .hero-block p {
+    font-size: 0.9em;
+  }
+
+  .find-doctor-button {
+    font-size: 14px;
+    padding: 6px 12px;
+  }
+
+  .specification-card,
+  .concern-card {
+    min-width: 120px;
+    height: 120px;
+  }
+}

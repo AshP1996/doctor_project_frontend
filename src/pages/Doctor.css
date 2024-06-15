@@ -1,0 +1,207 @@
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #f4f4f9;
+  margin: 0;
+  padding: 0;
+}
+
+.doctor-container {
+  padding: 20px;
+}
+
+.filter-block {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 15px;
+  background-color: #5d88b3;
+  color: #fff;
+  border-bottom: 4px solid #0056b3;
+  animation: fadeIn 1s ease-in-out;
+  border-radius: 5px;
+}
+
+.filter-block label {
+  margin: 10px;
+  position: relative; /* For positioning the suggestions */
+  flex: 1 1 200px;
+}
+
+.filter-block input,
+.filter-block select {
+  width: 100%;
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  transition: border-color 0.3s;
+}
+
+.filter-block input:focus,
+.filter-block select:focus {
+  border-color: #007bff;
+}
+
+.filter-block button {
+  padding: 10px 20px;
+  background-color: #0056b3;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  margin: 10px;
+}
+
+.filter-block button:hover {
+  background-color: #003f8a;
+  transform: scale(1.05);
+}
+
+.doctor-cards {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 10px;
+  width: 90%;
+  max-width: 800px;
+  padding: 20px;
+  display: flex;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+  position: relative;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.profile-pic {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  margin-right: 20px;
+}
+
+.doctor-details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card h3 {
+  margin: 0;
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #333;
+}
+
+.card p {
+  margin: 5px 0;
+  color: #666;
+}
+
+.description {
+  font-style: italic;
+}
+
+.fees {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: #eeeff0;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+@media (max-width: 600px) {
+  .filter-block {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .filter-block label {
+    width: 100%;
+    text-align: center;
+  }
+
+  .filter-block input,
+  .filter-block select {
+    width: 80%;
+  }
+
+  .filter-block button {
+    width: 80%;
+    margin-top: 10px;
+  }
+
+  .doctor-cards {
+    padding: 10px;
+  }
+
+  .card {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .profile-pic {
+    margin-bottom: 20px;
+    margin-right: 0;
+  }
+
+  .fees {
+    position: static;
+    margin-top: 10px;
+  }
+}
+
+/* Additional styles for city suggestions */
+.city-suggestions {
+  border: 1px solid #f9f8f8;
+  border-top: none;
+  max-height: 150px;
+  overflow-y: auto;
+  color: #000;
+  background-color: #fff;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  z-index: 1;
+  width: calc(100% - 22px); /* Align with input width */
+  left: 10px;
+  top: calc(100% + 2px); /* 2px below the input field */
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.city-suggestions li {
+  padding: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.city-suggestions li:hover {
+  background-color: #003f8a;
+  color: #fff;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

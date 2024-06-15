@@ -1,0 +1,53 @@
+/* ServiceSpecializationDetails.css */
+
+.details-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.doctor-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.profile-pic-large {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+
+.doctor-info h2 {
+  margin: 0;
+  color: #333;
+}
+
+.doctor-info p {
+  margin: 5px 0;
+  color: #777;
+}
+
+.doctor-details h3 {
+  margin-top: 20px;
+  color: #333;
+}
+
+.doctor-details ul {
+  list-style: none;
+  padding: 0;
+}
+
+.doctor-details ul li {
+  background: #fff;
+  padding: 10px;
+  border: 1px solid #ddd;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  color: #555;
+}
