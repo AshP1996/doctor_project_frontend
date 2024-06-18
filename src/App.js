@@ -26,7 +26,7 @@ const App = () => {
             <Route path="/doctor_form" element={<DoctorForm />} />
             <Route path="/doctor/:id" element={<DoctorProfile />} />
             <Route path="/doctor_dashboard/:id" element={<Dashboard />} /> //
-            Ensure this route matches the path in the form submission
+            vdfdfdf Ensure this route matches the path in the form submission
           </Routes>
         </div>
         <Footer />
